@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Healthy Food</title>
+    <title>MHeal</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,14 +17,120 @@
   <body>
       
     <div class="wrapper-content">
-         <!-- cover -->
+        <!-- Background-slider -->
+        <div class="bg-full">
+            <ul>
+                <li> <span> Image 1</span></li>
+            </ul>
+            <!-- <ul>
+                <li> <span> Image 2</span></li>
+            </ul> -->
+        </div>
+        <!-- cover -->
         <div class="cover"></div>
+        <div class="cover1"></div>
+
+        <!-- Sign up -->
+        <div class="sign-up">
+            <div class="sign-up-inner text-center">
+                <h1>Đăng kí</h1>
+                <div class="input-block">
+                    <input type="text" name="ho" id="ho" placeholder="Họ"> <br>
+                    <input type="text" name="ten" id="ten" placeholder="Tên"> <br>
+                    <input type="text" name="email" id="email" placeholder="Email"> <br>
+                    <input type="password" name="mk" id="mk" placeholder="Mật khẩu"> <br>
+                    <input type="password" name="cf" id="cf" placeholder="Xác nhận mật khẩu"> <br>
+                </div>
+                <span>Bằng việc đăng kí, bạn đã đồng ý với Mheal về <a class="license" href="#">Điều khoản dịch vụ & Chính sách bảo mật</a> </span> <br>
+                <button class="btn-info text-uppercase sign-up-button">Đăng kí</button> <br>
+                <p>Bạn đã có tài khoản ? <a class="sign-in-link" href="">Đăng nhập </a></p>
+            </div>
+        </div>
+
+        <!-- Sign in -->
+        <div class="sign-in">
+            <div class="sign-in-inner text-center">
+                <h1>Đăng nhập</h1>
+                <div class="input-block">
+                    <input type="text" name="user" id="user" placeholder="Email"> <br>
+                    <input type="password" name="pw" id="pw" placeholder="Mật khẩu"> <br>
+                </div>
+                <div class="ques">
+                    <span class="left">Nhớ mật khẩu <input type="checkbox" checked='checked'></span>
+                    <span class="right"><a class="forgot" href="#">Quên mật khẩu ?</a></span>
+                </div>
+                <button class="btn-info text-uppercase sign-in-button">Đăng nhập</button>
+                <p>Bạn chưa có tài khoản? <a class="sign-up-link" href="#">Đăng kí </a></p>
+            </div>
+        </div>
+
+        <!-- Sign up success -->
+        <div class="sign-up-success text-center">
+            <div class="sign-up-success-inner">
+                <h1>Đăng kí</h1>
+                <p>Tài khoản tạo thành công!</p>
+                <button class="btn-info text-uppercase ctn-login">Tiếp tục đăng nhập</button>
+            </div>
+        </div>
+
+        <!-- Forgot Password -->
+        <div class="forgot-pw">
+            <div class="forgot-pw-inner">
+                <h1>Đặt lại mật khẩu của bạn</h1>
+                <p>Chúng tôi sẽ gửi cho bạn thông tin mà bạn cần</p>
+                <div class="input-block">
+                    <input type="text" name='email1' id="email1" placeholder="Email">
+                </div>
+                <button class="btn-info text-center text-uppercase send">gửi email đặt lại mật khẩu</button>
+            </div>
+        </div>
+
+        <!-- Sent mail -->
+        <div class="sent-mail">
+            <div class="sent-mail-inner">
+                <h1>Đã gửi email</h1>
+                <p class="content">Chúng tôi đã gửi mã CODE đến duongthihaivy@gmail.com</p>
+                <div class="input-block">
+                    <input type="text" name="code" id="code" placeholder="Nhập mã CODE">
+                </div>
+                <button class="btn-info text-center text-uppercase confirm">xác nhận</button>
+                <p class="text-center re-send">Bạn chưa nhận được email? <a href="#">Thử lại</a></p>
+            </div>
+        </div>
+
+        <!-- New Password -->
+        <div class="new-pass">
+            <div class="new-pass-inner">
+                <h1>Đặt lại mật khẩu của bạn</h1>
+                <div class="input-block">
+                    <input type="password" placeholder="Nhập mật khẩu mới">
+                    <input type="password" placeholder="Xác nhận mật khẩu mới">
+                </div>
+                <button class="btn-info text-center text-uppercase confirm1">xác nhận</button>
+            </div>
+        </div>
+
+        <!-- Password Changed -->
+        <div class="pw-changed text-center">
+            <div class="pw-changed-inner">
+                <h1>Đã đổi mật khẩu!</h1>
+                <p>Mật khẩu của bạn đã được thay đổi thành công</p>
+                <button class="btn-info text-uppercase ctn-login1">Tiếp tục đăng nhập</button>
+            </div>
+        </div>
+
+        <!-- Sign in Success -->
+        <div class="sign-in-success text-center">
+            <div class="sign-in-success-inner">
+                <h1>Đăng nhập thành công</h1>
+            </div>
+        </div>
         <!-- main-content -->
         <div class="container wrapper-content-inner">
             <!-- Navigation -->
             <nav class="navbar navbar-expand-md navbar-light navbar">
  
-                    <a class="navbar-brand" href="#" style="color:#fff">Logo</a>
+                    <a class="navbar-brand logo" href="#" ><img src="images/logo.png" alt=""></a>
                     
                     <div class="collapse navbar-collapse" id="topNav">
                         <ul class="navbar-nav ml-auto">
@@ -36,11 +142,13 @@
                                         <!-- end 1 li -->
                                         <li><img src="images/datban.png" alt=""><a href="#">Thực đơn ngày</a></li>
                                         <!-- end 1 li -->
-                                        <li><img src="images/about-us.png" alt=""><a href="#">Về chúng tôi</a></li>
+                                        <li><img src="images/cart.png" alt=""><a href="#">Giỏ hàng</a></li>
                                         <!-- end 1 li -->
                                         <li><img src="images/question.png" alt=""><a href="#">Tư vấn</a></li>
                                         <!-- end 1 li -->
-                                        <li><img src="images/cart.png" alt=""><a href="#">Giỏ hàng</a></li>
+                                        <li><img src="images/blog.png" alt=""><a href="#">Blog</a></li>
+                                        <!-- end 1 li -->
+                                        <li><img src="images/about-us.png" alt=""><a href="#">About us / FAQs</a></li>
                                         <!-- end 1 li -->
                                     </ul>
                                 </div>
@@ -61,7 +169,7 @@
                 </div>
                 <div class="col-sm-10 col-10 text-center mx-auto">
                     <div class="intro-inner" style="color:#fff">
-                        <h1>Healthy Starts Here</h1>
+                        <h1 class="text-uppercase">Refresh & Delicious</h1>
                         <p class="title">Bữa ăn lành mạnh cho cuộc sống tuyệt vời</p>
                         <div class="choose-button">
                             <button class="btn-primary text-uppercase button1"><a href="">kế hoạch ăn</a></button>
@@ -74,8 +182,8 @@
                 <div class="col-sm-1 col-1">
                     <div class="login-area-inner text-center">
                         <ul>
-                            <li class="login"><a href="#" class="login">Đăng nhập</a></li>
-                            <li class="register"><a href="#" class="register">Đăng kí</a></li>
+                            <li class="login1"><a href="#" class="login">Đăng nhập</a></li>
+                            <li class="register1"><a href="#" class="register">Đăng kí</a></li>
                         </ul>
                     </div>
                 </div>
@@ -104,7 +212,7 @@
                         <li>
                             <a href="#">
                                 <img class="static" src="images/youtube.png" alt="">
-                                <img class="img-hover" style="top:19px" src="images/youtube-hover.png" alt="">
+                                <img class="img-hover yt" src="images/youtube-hover.png" alt="">
                             </a>
                         </li>
                         <li>

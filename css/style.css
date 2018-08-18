@@ -2,34 +2,71 @@
 *{margin:0;padding:0}
 :root {
     /* COLOR */
-    --hover_color: #05ab39;
+    --hover_color: #23d25b;
     --text_color: #f9f9fc;
     --muted_text: #bebebe;
     /* font */
     --font: 'Nunito', sans-serif;
 }
 
-/* background image */
-.wrapper-content {
-    background-image: url(../images/background.png);
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-position: center center;
-    height: 100vh;
-    overflow: hidden;
-    border-bottom: 1px solid #fff;
+body {
+    overflow-y: hidden;
 }
+/* background image */
+
+.wrapper-content .bg-full {
+    width:100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: 0;
+
+}
+.wrapper-content .bg-full ul li span {
+    color: transparent;
+    position: absolute;
+    width:100%;
+    height:100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-size: cover;
+    background-repeat: none;
+    background-position: center;
+    /* opacity: 0;
+    animation: Images 12s linear infinite 0s;
+    -webkit-animation: Images 12s linear infinite 0s; */
+}
+.wrapper-content .bg-full ul li:nth-child(1) span {
+    background-image: url(../images/background.png);
+}
+/* .wrapper-content .bg-full ul li:nth-child(2) span {
+    background-image: url(../images/home_bakery_slide_bg2.jpg);
+    animation-delay: 6s;
+}
+@-webkit-keyframes Images {
+    0% { opacity: 0; animation-timing-function: ease-in; }
+    20% { opacity: 1; animation-timing-function: ease-out; }
+    50% { opacity: 1 }
+    75% { opacity: 0 }
+    100% { opacity: 0 }
+} */
+
+/* Cover */
 .cover {
     width:100%;
     height: 100%;
     background: black;
     opacity: 0.7;
     position: absolute;
+    top:0;
+    left:0;
 }
 
 /* main-content */
 .wrapper-content-inner .navbar {
-    margin-top: 98px;
+    margin-top: 53px;
 }
 
 /* Navigation */
@@ -40,19 +77,24 @@
     width: 70%;
 }
 .navbar #topNav ul li a {position: relative;}
+.navbar .logo img {
+    height: 80px;
+}
 .drop-down {
     position: absolute;
     right: -30px;
     width: 300px;
-    height:310px;
+    height: auto;
     background: var(--hover_color);
     z-index: 999;
-    padding: 56px 60px;
+    padding: 40px 60px;
     box-sizing:border-box;
     border-radius: 5px;
     visibility: hidden;
     opacity: 0;
+    border:none;
 }
+.drop-down ul.title {width:200px;}
 .drop-down ul.title li {text-align: left!important;list-style: none;}
 .drop-down ul.title li a {
     color: var(--text_color);
@@ -65,10 +107,11 @@
     display: inline-block;
     text-decoration: none;
     transition: 0.4s ease;
+    transform: translateY(4px);
 }
-.drop-down ul.title li a:hover {transform: translateX(20px);}
+.drop-down ul.title li a:hover {transform: translateY(4px) translateX(20px);}
 .drop-down.show {
-    opacity: 0.95;
+    opacity: 1;
     visibility: visible;
     animation: go-right 0.5s ease;
     -webkit-animation: go-right 0.5s ease;
@@ -83,7 +126,7 @@
 }
 /* Intro */
 .intro-inner {
-    margin-top: 10vh;
+    margin-top: 9vh;
     color: var(--text_color);
 }
 .intro-inner h1 {
@@ -101,7 +144,7 @@
 button.button1,
 button.button2 {
     background: transparent;
-    border: 2px solid var(--text_color);
+    border: 1.75px solid var(--text_color);
     border-radius: 5px;
     padding: 23px 35px;
     transition: 0.4s ease;
@@ -123,7 +166,7 @@ button.button2 a {
 button.button1:hover,
 button.button2:hover {
     background: var(--hover_color);
-    border: 2px solid var(--hover_color);
+    border: 1.75px solid var(--hover_color);
 }
 p.info {
     font-size:20px;
@@ -138,7 +181,7 @@ p.info {
 
 /* Page Number */
 .flex-elemt-inner {
-    margin-top: 29vh;
+    margin-top: 26vh;
 }
 .page-number span {
     color: var(--text_color);
@@ -150,12 +193,12 @@ p.info {
 
 /* Login-Area */
 .login-area-inner {
-    margin-top: 26vh;
+    margin-top: 25vh;
 }
 .login-area-inner ul li {
     list-style: none;
 }
-.login-area-inner ul li.login {
+.login-area-inner ul li.login1 {
     padding-bottom: 135px;
 }
 .login-area-inner ul li a.login,
@@ -180,13 +223,13 @@ p.info {
 .line {position: absolute}
 .line img {
     width: 88%;
-    padding-top: 80px;
+    padding-top: 70px;
     transform: translateX(-14px);
 }
 
 /* Footer */
 .footer {
-    margin-top: 10vh;
+    margin-top: 12vh;
 }
 .list-social ul li {list-style:none;}
 .list-social ul li a {
@@ -198,6 +241,9 @@ p.info {
 .list-social ul li a img {
     width: 80%;
     transition: 0.4s ease;
+}
+.list-social ul li a img.img-hover.yt {
+    top: 19px;
 }
 .list-social ul li a img.img-hover {
     position: absolute;
@@ -238,4 +284,219 @@ p.info {
     font-size: 20px;
     color: var(--text_color);
 }
+
+/* Sign-up */
+.cover1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #0000003d;
+    top: 0;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+}
+.sign-up,.sign-in,
+.sign-up-success,
+.forgot-pw,
+.sent-mail,
+.new-pass,
+.pw-changed,
+.sign-in-success {
+    position: fixed;
+    width: 580px;
+    height: auto;
+    background: var(--text_color);
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) scale(0.9);
+    z-index: 3;
+    display: block;
+    border: none;
+    border-radius: 10px;
+    padding: 30px 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.6s ease;
+}
+.sign-up-inner h1,.sign-in-inner h1,
+.sign-up-success h1,
+.forgot-pw-inner h1,
+.sent-mail-inner h1,
+.new-pass-inner h1,
+.pw-changed-inner h1,
+.sign-in-success-inner h1 {
+    font-size: 32px;
+    font-family: var(--font);
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #777777;
+}
+.sign-up-inner .input-block input,
+.sign-in-inner .input-block input,
+.forgot-pw .input-block input,
+.sent-mail .input-block input,
+.new-pass .input-block input {
+    width: 100%;
+    height: 58px;
+    border-radius: 8px;
+    border: 1px solid #777777;
+    margin-bottom: 10px;
+}
+.sign-up-inner .input-block input[type=text],
+.sign-up-inner .input-block input[type=password],
+.sign-in-inner .input-block input[type=text],
+.sign-in-inner .input-block input[type=password],
+.forgot-pw-inner .input-block input[type=text],
+.sent-mail-inner .input-block input[type=text],
+.new-pass-inner .input-block input[type=password] {
+    padding: 25px;
+    font-size: 16px;
+    font-family: font(--font);
+    color: #777777;
+}
+.sign-up-inner .input-block input[type='text']{
+    font-size: 16px;
+    color: #777777;
+    font-family: font(--font);
+}
+.sign-up-inner .input-block input::placeholder,
+.sign-in-inner .input-block input::placeholder,
+.forgot-pw-inner .input-block input::placeholder,
+.sent-mail-inner .input-block input::placeholder,
+.new-pass-inner .input-block input::placeholder {
+    color: #777777;
+    font-family: var(--font);
+    font-size: 16px;
+}
+.sign-up-inner span,
+.sign-in-inner span {
+    font-size: 11px;
+    font-family: var(--font);
+}
+.sign-up-inner .sign-up-button,
+.sign-in-inner .sign-in-button,
+.sign-up-success button.ctn-login,
+.forgot-pw-inner button.send,
+.sent-mail-inner button.confirm,
+.new-pass-inner button.confirm1,
+.pw-changed-inner button.ctn-login1{
+    width: 100%;
+    padding: 15px;
+    background: var(--hover_color);
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: var(--font);
+    transition: 0.4s ease;
+}
+.sign-up-inner .sign-up-button:hover,
+.sign-in-inner .sign-in-button:hover,
+.sign-up-success button.ctn-login:hover,
+.forgot-pw-inner button.send:hover,
+.sent-mail-inner button.confirm:hover,
+.new-pass-inner button.confirm1:hover,
+.pw-changed-inner button.ctn-login1:hover{
+    background: #1e9845;
+}
+.sign-up-inner p,
+.sign-in-inner p {
+    font-size: 13px;
+    font-family: var(--font);
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: #777777;
+}
+.sign-up-inner p a.sign-in-link,
+.sign-in-inner p a.sign-up-link {
+    color: #777777;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.4s ease;
+}
+.sign-up-inner p a.sign-in-link:hover,
+.sign-in-inner p a.sign-up-link:hover {
+    color: var(--hover_color);
+}
+.cover1.appearance {
+    opacity: 1;
+    visibility: visible;
+}
+.sign-up.appearance,.sign-in.appearance,
+.sign-up-success.appearance,
+.forgot-pw.appearance,
+.sent-mail.appearance,
+.new-pass.appearance,
+.pw-changed.appearance {
+    transform: translateX(-50%) translateY(-50%) scale(1)!important;
+    opacity: 1;
+    visibility: visible;
+}
+.login-area-inner ul li a.login.active,
+.login-area-inner ul li a.register.active {
+    color: var(--hover_color);
+}
+/* Sign-in */
+.sign-in-inner .ques {
+    text-align: left;
+}
+.sign-in-inner .ques span {
+    font-size: 16px;
+    font-family: var(--font);
+}
+.sign-in-inner .ques span.right a {
+    float: right;
+    color: #777777;
+    text-decoration:none;
+    transition: 0.4s ease;
+}
+.sign-in-inner .ques span.right a:hover {
+    color: var(--hover_color);
+}
+/* Success */
+.sign-up-success-inner p,
+.forgot-pw-inner p,
+.pw-changed-inner p {
+    font-size: 18px;
+    font-family: var(--font);
+    color: #777777;
+}
+.forgot-pw-inner h1,
+.sent-mail-inner h1 {
+    margin-bottom: 20px;
+}
+/* Sent mail */
+.sent-mail-inner p a {
+    color: red;
+    text-decoration: underline;
+}
+.sent-mail-inner p.re-send {
+    margin-top: 20px;
+}
+/* Sign-in-success */
+.sign-in-success-inner h1 {
+    margin-top: 32px;
+}
+.sign-in-success.fade-out {
+    animation: fade-out 5s forwards;
+    -webkit-animation: fade-out 5s forwards;
+}
+@-webkit-keyframes fade-out {
+
+    0% {opacity: 0;visibility: hidden;transform: translateX(-50%) translateY(-50%) scale(0.9);}
+    50% {opacity:1; visibility: visible;transform: translateX(-50%) translateY(-50%) scale(1)}
+    75% {opacity:1; visibility: visible;transform: translateX(-50%) translateY(-50%) scale(1)}
+    100% {opacity: 0; visibility: hidden;transform: translateX(-50%) translateY(-50%) scale(0.3)}
+}
+@keyframes fade-out {
+
+    0% {opacity: 0;visibility: hidden;transform: translateX(-50%) translateY(-50%) scale(0.9);}
+    50% {opacity:1; visibility: visible;transform: translateX(-50%) translateY(-50%) scale(1)}
+    75% {opacity:1; visibility: visible;transform: translateX(-50%) translateY(-50%) scale(1)}
+    100% {opacity: 0; visibility: hidden;transform: translateX(-50%) translateY(-50%) scale(0.3)}
+}
+
 /* END */
